@@ -16,7 +16,7 @@ async function main() {
         });
 
     } catch (error) {
-        console.log("The error is", error);
+        console.log("The error is : ", error);
     }
 }
 main();
