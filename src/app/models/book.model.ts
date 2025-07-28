@@ -1,8 +1,9 @@
 import { model, Schema } from "mongoose";
+import { Ibook } from "../interfaces/book.interface";
 
 
 
-const bookSchema = new Schema({
+const bookSchema = new Schema<Ibook>({
     title:{
         type:String,
         required:true,
