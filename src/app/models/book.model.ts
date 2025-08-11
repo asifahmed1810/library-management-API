@@ -46,4 +46,4 @@ const bookSchema = new Schema<Ibook>({
     timestamps:true
 })
 
-const Books=model('Books',bookSchema)
+export const Books=model('Books',bookSchema)
