@@ -25,3 +25,36 @@ bookRoutes.post("/create-book",async(req:Request, res:Response)=>{
         })
     }
 })
+
+
+bookRoutes.get("/all-books", async (req: Request, res: Response) => {
+  try {
+    const { filter, sortBy = "createdAt", sort = "asc", limit = "10" } = req.query;
+
+    // Build the filter object
+    const query: any = {};
+    if (filter) {
+      query.genre = filter; // filter by genre
+    }
+
+    // Sorting order
+    const sortOrder = sort === "desc" ? -1 : 1;
+
+    // Fetch books from DB
+    const books = await Books.find(query)
+      .sort({ [sortBy as string]: sortOrder })
+      .limit(parseInt(limit as string));
+
+    res.status(200).json({
+      success: true,
+      message: "Books retrieved successfully",
+      data: books,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to retrieve books",
+      error: (error as Error).message,
+    });
+  }
+});
