@@ -58,3 +58,15 @@ bookRoutes.get("/all-books", async (req: Request, res: Response) => {
     });
   }
 });
+
+
+bookRoutes.get("/:bookId",async(req:Request, res:Response)=>{
+    const bookId=req.params.bookId;
+    const book=await Books.findById(bookId);
+
+    res.status(201).json({
+        success:true,
+        message:"Books retrieved successfully",
+        book
+    })
+})
