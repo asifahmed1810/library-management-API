@@ -18,3 +18,10 @@ It supports **CRUD operations**, filtering, sorting, and business logic for libr
   - Limit results
 - **Schema Validation**
   - Enforced via Mongoose schemas
+    
+##  Tech Stack
+
+- **Backend**: Express.js
+- **Language**: TypeScript
+- **Database**: MongoDB + Mongoose
+- **Validation**: Mongoose schema validation
