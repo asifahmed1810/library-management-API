@@ -6,7 +6,7 @@ const app:Application=express();
 
 app.use(express.json())
 
-app.use('/books',bookRoutes)
+app.use('/api',bookRoutes)
 
 app.get('/',(req:Request , res:Response)=>{
     res.send('Welcome To Library Management app')
