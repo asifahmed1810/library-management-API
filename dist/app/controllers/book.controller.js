@@ -35,7 +35,7 @@ exports.bookRoutes.post("/create-book", (req, res) => __awaiter(void 0, void 0, 
         });
     }
 }));
-exports.bookRoutes.get("/all-books", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+exports.bookRoutes.get("/books", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { filter, sortBy = "createdAt", sort = "asc", limit = "10" } = req.query;
         // Build the filter object

@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const book_controller_1 = require("./app/controllers/book.controller");
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use('/books', book_controller_1.bookRoutes);
+app.use('/api', book_controller_1.bookRoutes);
 app.get('/', (req, res) => {
     res.send('Welcome To Library Management app');
 });
