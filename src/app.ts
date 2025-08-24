@@ -10,7 +10,7 @@ const app:Application=express();
 
 
 app.use(express.json())
-app.use(corsMiddleware({ origin: ["http://localhost:5173", "https://library-management-api-nu-nine.vercel.app"]}))
+app.use(corsMiddleware({ origin: ["https://library-management-frontend-using-r.vercel.app", "https://library-management-api-nu-nine.vercel.app"]}))
 
 app.use('/api',bookRoutes)
 app.use('/api/borrow',borrowRoutes)
