@@ -10,7 +10,7 @@ const errorHandler_1 = require("./app/middleware/errorHandler");
 const cors_1 = __importDefault(require("cors"));
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
-app.use((0, cors_1.default)({ origin: ["http://localhost:5173", "https://library-management-api-nu-nine.vercel.app"] }));
+app.use((0, cors_1.default)({ origin: ["https://library-management-frontend-using-r.vercel.app", "https://library-management-api-nu-nine.vercel.app"] }));
 app.use('/api', book_controller_1.bookRoutes);
 app.use('/api/borrow', borrow_controller_1.borrowRoutes);
 app.get('/', (req, res) => {

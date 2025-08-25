@@ -3,7 +3,7 @@ import { Books } from "../models/book.model";
 
 export const bookRoutes=express.Router();
 
-bookRoutes.post("/create-book",async(req:Request, res:Response)=>{
+bookRoutes.post("/books",async(req:Request, res:Response)=>{
     try {
         const body=req.body
         const book=await Books.create(body)
@@ -60,7 +60,7 @@ bookRoutes.get("/books", async (req: Request, res: Response) => {
 });
 
 
-bookRoutes.get("/:bookId",async(req:Request, res:Response)=>{
+bookRoutes.get("/books/:bookId",async(req:Request, res:Response)=>{
     const bookId=req.params.bookId;
     const book=await Books.findById(bookId);
 
@@ -71,7 +71,7 @@ bookRoutes.get("/:bookId",async(req:Request, res:Response)=>{
     })
 })
 
-bookRoutes.patch("/:bookId",async(req:Request,res:Response)=>{
+bookRoutes.patch("/books/:bookId",async(req:Request,res:Response)=>{
   
 
     const bookId=req.params.bookId;
@@ -86,7 +86,7 @@ bookRoutes.patch("/:bookId",async(req:Request,res:Response)=>{
 
 })
 
-bookRoutes.delete("/:bookId",async(req:Request, res:Response)=>{
+bookRoutes.delete("/books/:bookId",async(req:Request, res:Response)=>{
     const bookId=req.params.bookId;
     const book=await Books.findByIdAndDelete(bookId);
     res.status(201).json({

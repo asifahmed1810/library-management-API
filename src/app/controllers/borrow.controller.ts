@@ -3,7 +3,7 @@ import { Borrow } from "../models/borrow.model";
 
 export const borrowRoutes=express.Router();
 
-borrowRoutes.post('/create-borrow', async(req:Request , res:Response)=>{
+borrowRoutes.post('/', async(req:Request , res:Response)=>{
     try {
         const {book,quantity,dueDate}=req.body;
 
@@ -26,7 +26,7 @@ borrowRoutes.post('/create-borrow', async(req:Request , res:Response)=>{
 
 })
 
-borrowRoutes.get('/borrows',async(req:Request , res:Response)=>{
+borrowRoutes.get('/',async(req:Request , res:Response)=>{
     try {
         const summary=await Borrow.aggregate([
             {
